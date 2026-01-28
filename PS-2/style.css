@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header{
+    text-align: center;
+    margin: 10px 10px 30px 10px;
+}
+.title{
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e40af;
+}
+.head-line{
+    text-align: center;
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+
+.calculator{
+    background: white;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.1);
+}
+.add-people,.expense{
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.heading-sec{
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1e293b;
+    font-size: 1.15rem;
+}
+.persons{
+    display: flex;
+    gap: 10px;
+}
+input,select{
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    outline: none;
+}
+.person-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 15px;
+}
+.persons-list span{
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+.who-paid{
+    border-bottom: 1px solid #e2e8f0;
+}
+.split-among{
+    margin: 8px 0;
+    padding: 7px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+.for-whom{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 3px;
+    margin-top: 10px;
+}
+.for-whom label{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.money-discription{
+    display: flex;
+    gap: 50px;
+    margin-top: 15px;
+}
+.money,.discription{
+    width: 310px;
+}
+#expense-money,#expense-dec{
+    width: 100%;
+}
+button{
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+#add-person{
+    background: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+}
+#add-person:hover{
+    background: #2563eb;
+}
+#expense{
+    width: 100%;
+    background: #10b981;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+#expense:hover{
+    background: #059669;
+}
+.history{
+    display: grid;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.expense-history,.final-settlement{
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.146);
+}
+.history-list > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+.his-list{
+    font-weight: 700;
+    color: #2563eb;
+}
+.spliting{
+    font-size: 0.75rem;
+    color: #64748b;
+}
+.delete{
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 0.85rem;
+}
+.delete:hover{
+    text-decoration: underline;
+}
+.settlement-list > div{
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+.settlement-list b{
+    color: #1e40af;
+}
+
+
+footer{
+    text-align: center;
+    margin: 40px 0;
+    padding-bottom: 20px;
+}
+.reset{
+    background: #64748b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+.reset:hover{
+    background: #f76d6d;
+}

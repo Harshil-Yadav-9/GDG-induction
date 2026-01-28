@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Sliptter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="title">Expense Spilter</div>
+    </header>
+    <main>
+        <div class="head-line">Split cost with expense Calculator</div>
+        <div class="calculator">
+            <div class="add-people">
+                <div class="heading-sec">Add People: </div>
+                <div class="persons">
+                    <input type="text" id="person-name" placeholder="Enter the Name of Person">
+                    <button id="add-person" onclick="addPerson()">Add</button>
+                </div>
+                <div class="person-list"></div>
+            </div>
+            <div class="expense">
+                <div class="who-paid">
+                    <div class="heading-sec">Who Paid?</div>
+                    <select id="payer">
+                        <option value="">Select Person..</option>
+                    </select>
+                </div>
+                <div class="split-among">
+                    <div class="heading-sec">Split Amongst: </div>
+                    <div class="for-whom"></div>
+                </div>
+                <div class="money-discription">
+                    <div class="money">
+                        <div class="heading-sec">Money: </div>
+                        <input type="number" id="expense-money" placeholder="Amount in $..">
+                    </div>
+                    <div class="discription">
+                        <div class="heading-sec">Discription: </div>
+                        <input type="text" id="expense-dec" placeholder="Discription (Optional)">
+                    </div>
+                </div>
+            </div>
+            <div class="add-expense">
+                <button id="expense">Add Expense: </button>
+            </div>
+        </div>
+        <div class="history">
+            <div class="expense-history">
+                <div class="heading-sec">Expense History: </div>
+                <div class="history-list"></div>
+            </div>
+            <div class="final-settlement">
+                <div class="heading-sec">Final Settlement: </div>
+                <div class="settlement-list"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="Reset-all">
+            <button onclick="clearAll()" class="reset">
+                Reset(Clear All Data)
+            </button>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div>
+        <div >
+            <h2 >1. Add People to Trip</h2>
+            <div class="flex gap-2">
+                <input id="personName" type="text" placeholder="Enter name">
+                <label for="personName">
+                    <button onclick="addPerson()">Add</button>
+                </label>
+            </div>
+            <div id="peopleList"></div>
+        </div>
+
+        <div>
+            <h2>2. Log Expense</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input id="expDesc" type="text" placeholder="Dinner, Taxi, etc." class="border p-2 rounded">
+                <input id="expAmt" type="number" placeholder="Amount ($)" class="border p-2 rounded">
+                
+                <select id="payerSelect" >
+                    <option value="">Who Paid?</option>
+                </select>
+
+                <div>
+                    <p class="text-sm">Split amongst:</p>
+                    <div id="beneficiaryChecks" >
+                        </div>
+                </div>
+            </div>
+            <button onclick="logExpense()" >Add Record</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h2 > Expense History</h2>
+                <div id="historyList" ></div>
+            </div>
+            <div >
+                <h2 class="text-xl">💰 Final Settlement</h2>
+                <div id="settlementList"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-10 text-center">
+    <button onclick="clearAll()" class="text-sm text-gray-400 hover:text-red-500 underline">
+        Reset Whole Trip (Clear All Data)
+    </button>
+</div> -->
