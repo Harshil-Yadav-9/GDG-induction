@@ -81,51 +81,30 @@
 }
 
 
-/* .home{
-  color: grey;
-} */
 .home:hover{
   background-color: grey;
   color: white;
 }
-/* .pokédex{
-  color: rgba(224, 15, 15, 0.908);
-} */
 .pokédex:hover{
   background-color: rgba(224, 15, 15, 0.908);
   color: white;
 }
-/* .vid-game{
-  color: rgb(255, 136, 0);
-} */
 .vid-game:hover{
   background-color: rgb(255, 136, 0);
   color: white;
 }
-/* .trade-card{
-  color: rgba(255, 191, 0, 0.88);
-} */
 .trade-card:hover{
   background-color: rgba(255, 191, 0, 0.88);
   color: white;
 }
-/* .animation{
-  color: rgb(17, 160, 17);
-} */
 .animation:hover{
   background-color: rgb(17, 160, 17);
   color: white;
 }
-/* .events{
-  color: rgb(17, 183, 199);
-} */
 .events:hover{
   background-color: rgb(17, 183, 199);
   color: white;
 }
-/* .news{
-  color: rgb(0, 85, 255);
-} */
 .news:hover{
   background-color: rgb(0, 85, 255);
   color: white;

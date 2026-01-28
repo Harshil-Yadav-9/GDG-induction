@@ -5,6 +5,7 @@ pokédex.addEventListener("click", () => {
     return;
 });
 
+//whole individual pokemon details
 function renderDetails(data, category, ability, weakness, strength, evoChain) {
     const container = document.querySelector("#details-container");
     
@@ -90,18 +91,18 @@ function renderDetails(data, category, ability, weakness, strength, evoChain) {
     `;
 
     const poke_gen = document.querySelector(".poke-gen");
+    //go to the pokemon which is in evolution path
     poke_gen.addEventListener("click", (e) => {
         const card = e.target.closest(".poke-evo");
         if(card){
             const clickedId = card.id;
-            console.log("Navigating to ID:", clickedId);
             window.location.href = `details.html?id=${clickedId}`;
             return;
         }
     });
 
-    let stats_container = document.querySelector(".stats-container");
-
+    const stats_container = document.querySelector(".stats-container");
+    //base state animation
     const observer = new IntersectionObserver((entry) => {
         entry.forEach(entry => {
             if(entry.isIntersecting){
@@ -127,16 +128,13 @@ async function loadDetails() {
         //fetch the data for this specific id
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`);
         const data = await res.json();
-        // console.log(data);
 
         //take the ability form data
         const ability = data.abilities.filter(a => a.is_hidden === false).map(a => a.ability.name);
-        // console.log(ability);
-
+        
         //fetch species(for category/description)
         const speciesRes = await fetch(data.species.url);
         const speciesData = await speciesRes.json();
-        // console.log(speciesData);
         const category = speciesData.genera.find(g => g.language.name === "en").genus;
 
         //fetch types(for weaknesses)
@@ -144,36 +142,28 @@ async function loadDetails() {
         const weak_strength_data = await weak_strength_res.json();
         const weakness = weak_strength_data.damage_relations.double_damage_from;
         const strength = weak_strength_data.damage_relations.double_damage_to;
-        // console.log(weak_strength_data,weakness,strength);
-        // console.log(data.types);
-        // console.log(data.stats);
 
         //fetch evolution path
         const evoRes = await fetch(speciesData.evolution_chain.url);
         const evoData = await evoRes.json();
-        // console.log(evoData);
         let evoChain = [];
         let evoDataPath = evoData.chain;
 
         while(evoDataPath){
-
+            //fetch id from url
             const url_part = evoDataPath.species.url.split('/');
             const id = url_part[url_part.length - 2];
 
             const res_evo = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
             const data_evo = await res_evo.json();
-            console.log(data_evo);
 
             evoChain.push({
                 name: evoDataPath.species.name,
                 id: id,
                 types: data_evo.types.map(t => t.type.name)
             });
-
             evoDataPath = evoDataPath.evolves_to[0];
         }
-        // console.log(evoChain);
-
         //inject into the dom
         renderDetails(data, category, ability, weakness, strength, evoChain);
     } catch (error) {
